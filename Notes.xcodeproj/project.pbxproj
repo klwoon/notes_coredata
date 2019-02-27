@@ -13,6 +13,7 @@
 		695A60D02226D4C500BB9D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 695A60CF2226D4C500BB9D0C /* Assets.xcassets */; };
 		695A60D32226D4C500BB9D0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695A60D12226D4C500BB9D0C /* LaunchScreen.storyboard */; };
 		695A60E32226D5CD00BB9D0C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A60E22226D5CD00BB9D0C /* CoreDataManager.swift */; };
+		695A60E72226DE6200BB9D0C /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 695A60E52226DE6200BB9D0C /* Notes.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		695A60D22226D4C500BB9D0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		695A60D42226D4C500BB9D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		695A60E22226D5CD00BB9D0C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		695A60E62226DE6200BB9D0C /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		695A60C72226D4B500BB9D0C /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				695A60E42226DE3A00BB9D0C /* Core Data */,
 				695A60E12226D5A900BB9D0C /* Managers */,
 				695A60DA2226D4DC00BB9D0C /* Application Delegate */,
 				695A60DC2226D4FE00BB9D0C /* View Controllers */,
@@ -121,6 +124,14 @@
 				695A60E22226D5CD00BB9D0C /* CoreDataManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		695A60E42226DE3A00BB9D0C /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				695A60E52226DE6200BB9D0C /* Notes.xcdatamodeld */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 				695A60E32226D5CD00BB9D0C /* CoreDataManager.swift in Sources */,
 				695A60CB2226D4B500BB9D0C /* ViewController.swift in Sources */,
 				695A60C92226D4B500BB9D0C /* AppDelegate.swift in Sources */,
+				695A60E72226DE6200BB9D0C /* Notes.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +355,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Notes/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Notes/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -360,7 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Notes/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Notes/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,6 +406,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		695A60E52226DE6200BB9D0C /* Notes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				695A60E62226DE6200BB9D0C /* Notes.xcdatamodel */,
+			);
+			currentVersion = 695A60E62226DE6200BB9D0C /* Notes.xcdatamodel */;
+			path = Notes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 695A60BD2226D4B500BB9D0C /* Project object */;
 }
