@@ -8,24 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		695A60C92226D4B500BB9D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A60C82226D4B500BB9D0C /* AppDelegate.swift */; };
-		695A60CB2226D4B500BB9D0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A60CA2226D4B500BB9D0C /* ViewController.swift */; };
-		695A60CE2226D4B600BB9D0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695A60CC2226D4B600BB9D0C /* Main.storyboard */; };
+		695A60CB2226D4B500BB9D0C /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A60CA2226D4B500BB9D0C /* NotesViewController.swift */; };
+		695A60CE2226D4B600BB9D0C /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695A60CC2226D4B600BB9D0C /* Notes.storyboard */; };
 		695A60D02226D4C500BB9D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 695A60CF2226D4C500BB9D0C /* Assets.xcassets */; };
 		695A60D32226D4C500BB9D0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695A60D12226D4C500BB9D0C /* LaunchScreen.storyboard */; };
 		695A60E32226D5CD00BB9D0C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A60E22226D5CD00BB9D0C /* CoreDataManager.swift */; };
 		695A60E72226DE6200BB9D0C /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 695A60E52226DE6200BB9D0C /* Notes.xcdatamodeld */; };
+		695A60E92226F7B200BB9D0C /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A60E82226F7B200BB9D0C /* AddNoteViewController.swift */; };
+		695A60EC2227025200BB9D0C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A60EB2227025200BB9D0C /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		695A60C52226D4B500BB9D0C /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		695A60C82226D4B500BB9D0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		695A60CA2226D4B500BB9D0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		695A60CD2226D4B600BB9D0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		695A60CA2226D4B500BB9D0C /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		695A60CD2226D4B600BB9D0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Notes.storyboard; sourceTree = "<group>"; };
 		695A60CF2226D4C500BB9D0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		695A60D22226D4C500BB9D0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		695A60D42226D4C500BB9D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		695A60E22226D5CD00BB9D0C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		695A60E62226DE6200BB9D0C /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
+		695A60E82226F7B200BB9D0C /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		695A60EB2227025200BB9D0C /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 				695A60DA2226D4DC00BB9D0C /* Application Delegate */,
 				695A60DC2226D4FE00BB9D0C /* View Controllers */,
 				695A60DF2226D52500BB9D0C /* Supporting Files */,
+				695A60EA2227021600BB9D0C /* Extensions */,
 				695A60DE2226D51D00BB9D0C /* Resources */,
 				695A60DD2226D51500BB9D0C /* Storyboards */,
 			);
@@ -88,7 +93,7 @@
 		695A60DD2226D51500BB9D0C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				695A60CC2226D4B600BB9D0C /* Main.storyboard */,
+				695A60CC2226D4B600BB9D0C /* Notes.storyboard */,
 				695A60D12226D4C500BB9D0C /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -113,7 +118,8 @@
 		695A60E02226D55400BB9D0C /* Root View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				695A60CA2226D4B500BB9D0C /* ViewController.swift */,
+				695A60CA2226D4B500BB9D0C /* NotesViewController.swift */,
+				695A60E82226F7B200BB9D0C /* AddNoteViewController.swift */,
 			);
 			path = "Root View Controller";
 			sourceTree = "<group>";
@@ -132,6 +138,14 @@
 				695A60E52226DE6200BB9D0C /* Notes.xcdatamodeld */,
 			);
 			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		695A60EA2227021600BB9D0C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				695A60EB2227025200BB9D0C /* UIViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +208,7 @@
 			files = (
 				695A60D32226D4C500BB9D0C /* LaunchScreen.storyboard in Resources */,
 				695A60D02226D4C500BB9D0C /* Assets.xcassets in Resources */,
-				695A60CE2226D4B600BB9D0C /* Main.storyboard in Resources */,
+				695A60CE2226D4B600BB9D0C /* Notes.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,8 +220,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				695A60E32226D5CD00BB9D0C /* CoreDataManager.swift in Sources */,
-				695A60CB2226D4B500BB9D0C /* ViewController.swift in Sources */,
+				695A60CB2226D4B500BB9D0C /* NotesViewController.swift in Sources */,
+				695A60EC2227025200BB9D0C /* UIViewController.swift in Sources */,
 				695A60C92226D4B500BB9D0C /* AppDelegate.swift in Sources */,
+				695A60E92226F7B200BB9D0C /* AddNoteViewController.swift in Sources */,
 				695A60E72226DE6200BB9D0C /* Notes.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,12 +231,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		695A60CC2226D4B600BB9D0C /* Main.storyboard */ = {
+		695A60CC2226D4B600BB9D0C /* Notes.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				695A60CD2226D4B600BB9D0C /* Base */,
 			);
-			name = Main.storyboard;
+			name = Notes.storyboard;
 			sourceTree = "<group>";
 		};
 		695A60D12226D4C500BB9D0C /* LaunchScreen.storyboard */ = {
@@ -363,7 +379,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.woon.test.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -380,7 +396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.woon.test.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
