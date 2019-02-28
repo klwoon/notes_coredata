@@ -52,6 +52,7 @@
 		697ECD7B22281E0700B9EB64 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		697ECD7D22282FA400B9EB64 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		697ECD7F2228365600B9EB64 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		697ECD812228422700B9EB64 /* Notes 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Notes 2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -495,9 +496,10 @@
 		695A60E52226DE6200BB9D0C /* Notes.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				697ECD812228422700B9EB64 /* Notes 2.xcdatamodel */,
 				695A60E62226DE6200BB9D0C /* Notes.xcdatamodel */,
 			);
-			currentVersion = 695A60E62226DE6200BB9D0C /* Notes.xcdatamodel */;
+			currentVersion = 697ECD812228422700B9EB64 /* Notes 2.xcdatamodel */;
 			path = Notes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
