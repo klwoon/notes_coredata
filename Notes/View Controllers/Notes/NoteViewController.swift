@@ -12,7 +12,9 @@ class NoteViewController: UIViewController {
     
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var contentsTextView: UITextView!
+    @IBOutlet weak var category: UILabel!
     
+    @IBOutlet weak var categoryLabel: UILabel!
     var note: Note?
     
     override func viewDidLoad() {
