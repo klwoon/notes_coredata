@@ -19,16 +19,30 @@ class NotesViewController: UIViewController {
     
     private var coreDataManager = CoreDataManager(modelName: "Notes")
     private let estimatedRowHeight = CGFloat(44.0)
-    private var notes: [Note]? {
-        didSet {
-            updateView()
-        }
-    }
+//    private var notes: [Note]? {
+//        didSet {
+//            updateView()
+//        }
+//    }
     private var hasNotes: Bool {
-        guard let notes = notes else { return false }
-        return notes.count > 0
+        guard let fetchedObjects = fetchedResultsController.fetchedObjects else { return false }
+        return fetchedObjects.count > 0
     }
-    var notesDidChange = false
+    
+//    var notesDidChange = false
+    private lazy var fetchedResultsController: NSFetchedResultsController<Note> = {
+        let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Note.updatedAt),
+                                                         ascending: false)]
+        // create fetched results controller
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                    managedObjectContext: coreDataManager.managedObjectContext,
+                                                    sectionNameKeyPath: nil,
+                                                    cacheName: nil)
+        // configure it
+        controller.delegate = self
+        return controller
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +50,11 @@ class NotesViewController: UIViewController {
         title = "Notes"
         setupView()
         fetchNotes()
-        setupNotificationHandling()
-       
+//        setupNotificationHandling()
+        updateView()
     }
 
+    /* no longer used after adding NSfetchResultsController
     private func setupNotificationHandling() {
         let center = NotificationCenter.default
         center.addObserver(self,
@@ -81,7 +96,9 @@ class NotesViewController: UIViewController {
             tableView.reloadData()
             updateView()
         }
-    }
+    }*/
+    
+    /* This block is used before NSFetchedResultsController
     private func fetchNotes() {
         // create fetch request
         let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
@@ -102,6 +119,15 @@ class NotesViewController: UIViewController {
                 print("\(fetchError), \(fetchError.localizedDescription)")
             }
         }
+    }*/
+    
+    private func fetchNotes() {
+        do {
+            try self.fetchedResultsController.performFetch()
+        } catch {
+            print("Unable to Perform Fetch Request")
+            print("\(error), \(error.localizedDescription)")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -116,7 +142,8 @@ class NotesViewController: UIViewController {
             
         case Segue.Note:
             guard let destination = segue.destination as? NoteViewController else { return }
-            guard let indexPath = tableView.indexPathForSelectedRow, let note = notes?[indexPath.row] else { return }
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let note = fetchedResultsController.object(at: indexPath)
             destination.note = note
         default:
             break
@@ -155,39 +182,83 @@ class NotesViewController: UIViewController {
         dateFormatter.dateFormat = "MMM d, HH:mm"
         return dateFormatter
     }()
+    
+    func configure(_ cell: NoteTableViewCell, at indexPath: IndexPath) {
+        // fetch note
+        let note = fetchedResultsController.object(at: indexPath)
+        // configure cell
+        cell.titleLabel.text = note.title
+        cell.contentsLabel.text = note.contents
+        cell.updatedAtLabel.text = updatedAtDateFormatter.string(from: note.updatedAtAsDate)
+    }
 }
 
 extension NotesViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return hasNotes ? 1 : 0
+        guard let sections = fetchedResultsController.sections else { return 0 }
+        return sections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let notes = notes else { return 0 }
-        return notes.count
+        guard let section = fetchedResultsController.sections?[section] else { return 0 }
+        return section.numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let note = notes?[indexPath.row] else {
-            fatalError("Unexpected index path")
-        }
+
         // Dequeue Reusable Cell
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NoteTableViewCell.reuseIdentifier, for: indexPath) as? NoteTableViewCell else {
             fatalError("Unexpected Index Path")
         }
+        
         // configure cell
-        cell.titleLabel.text = note.title
-        cell.contentsLabel.text = note.contents
-        cell.updatedAtLabel.text = updatedAtDateFormatter.string(from: note.updatedAtAsDate)
+        configure(cell, at: indexPath)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
+        guard editingStyle == .delete else { return }
+        let note = fetchedResultsController.object(at: indexPath)
+        coreDataManager.managedObjectContext.delete(note)
     }
     
+}
+
+extension NotesViewController: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+        updateView()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        case .update:
+            if let indexPath = indexPath, let cell = tableView.cellForRow(at: indexPath) as? NoteTableViewCell {
+                configure(cell, at: indexPath)
+            }
+        case .move:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            if let newIndexPath = newIndexPath {
+                tableView.insertRows(at: [newIndexPath], with: .fade)
+            }
+        }
+    }
 }
 
 private enum Segue {
