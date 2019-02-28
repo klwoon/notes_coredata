@@ -26,6 +26,7 @@
 		695A60FF2227CF6100BB9D0C /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A60FE2227CF6100BB9D0C /* CategoryTableViewCell.swift */; };
 		697ECD7C22281E0700B9EB64 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697ECD7B22281E0700B9EB64 /* UIColor.swift */; };
 		697ECD7E22282FA400B9EB64 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697ECD7D22282FA400B9EB64 /* ColorViewController.swift */; };
+		697ECD802228365600B9EB64 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697ECD7F2228365600B9EB64 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		695A60FE2227CF6100BB9D0C /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		697ECD7B22281E0700B9EB64 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		697ECD7D22282FA400B9EB64 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		697ECD7F2228365600B9EB64 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				695A60F12227B2CA00BB9D0C /* Note.swift */,
+				697ECD7F2228365600B9EB64 /* Category.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				695A60F22227B2CA00BB9D0C /* Note.swift in Sources */,
 				695A60FB2227CE6900BB9D0C /* CategoryViewController.swift in Sources */,
 				695A60F72227CE1B00BB9D0C /* CategoriesViewController.swift in Sources */,
+				697ECD802228365600B9EB64 /* Category.swift in Sources */,
 				695A60F42227B65D00BB9D0C /* NoteViewController.swift in Sources */,
 				695A60C92226D4B500BB9D0C /* AppDelegate.swift in Sources */,
 				695A60E92226F7B200BB9D0C /* AddNoteViewController.swift in Sources */,

@@ -172,31 +172,42 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhu-ot-LMk">
-                                                            <rect key="frame" x="8" y="33" width="359" height="2.5"/>
+                                                            <rect key="frame" x="16" y="33" width="351" height="2.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btb-fa-lXQ">
-                                                            <rect key="frame" x="8" y="8" width="320" height="18"/>
+                                                            <rect key="frame" x="16" y="8" width="312" height="18"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2g4-j7-bma">
+                                                            <rect key="frame" x="0.0" y="0.0" width="4" height="43.5"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="4" id="vHh-sc-kgL"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="IAO-EA-ell" firstAttribute="leading" secondItem="Btb-fa-lXQ" secondAttribute="trailing" constant="8" id="2zE-80-40C"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2g4-j7-bma" secondAttribute="bottom" id="6Wg-FP-xqH"/>
+                                                        <constraint firstItem="2g4-j7-bma" firstAttribute="leading" secondItem="vpm-P8-DJS" secondAttribute="leading" id="BCt-my-ef2"/>
+                                                        <constraint firstItem="2g4-j7-bma" firstAttribute="top" secondItem="vpm-P8-DJS" secondAttribute="top" id="DTD-jq-S9D"/>
                                                         <constraint firstAttribute="bottom" secondItem="bhu-ot-LMk" secondAttribute="bottom" constant="8" id="L4v-YX-uMm"/>
-                                                        <constraint firstItem="Btb-fa-lXQ" firstAttribute="leading" secondItem="vpm-P8-DJS" secondAttribute="leading" constant="8" id="eT8-jb-b0V"/>
+                                                        <constraint firstItem="Btb-fa-lXQ" firstAttribute="leading" secondItem="2g4-j7-bma" secondAttribute="trailing" constant="12" id="eT8-jb-b0V"/>
                                                         <constraint firstItem="Btb-fa-lXQ" firstAttribute="top" secondItem="vpm-P8-DJS" secondAttribute="top" constant="8" id="mOS-XF-jff"/>
                                                         <constraint firstAttribute="trailing" secondItem="IAO-EA-ell" secondAttribute="trailing" constant="8" id="ost-3F-f0O"/>
-                                                        <constraint firstItem="bhu-ot-LMk" firstAttribute="leading" secondItem="vpm-P8-DJS" secondAttribute="leading" constant="8" id="qov-Hb-8mq"/>
+                                                        <constraint firstItem="bhu-ot-LMk" firstAttribute="leading" secondItem="2g4-j7-bma" secondAttribute="trailing" constant="12" id="qov-Hb-8mq"/>
                                                         <constraint firstAttribute="trailing" secondItem="bhu-ot-LMk" secondAttribute="trailing" constant="8" id="qvA-22-xuY"/>
                                                         <constraint firstItem="bhu-ot-LMk" firstAttribute="top" secondItem="IAO-EA-ell" secondAttribute="bottom" constant="8" id="yQA-qI-Pl8"/>
                                                         <constraint firstItem="IAO-EA-ell" firstAttribute="centerY" secondItem="Btb-fa-lXQ" secondAttribute="centerY" id="zYw-XH-JyA"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="categoryColorView" destination="2g4-j7-bma" id="CWX-bw-h7A"/>
                                                     <outlet property="contentsLabel" destination="bhu-ot-LMk" id="VMB-l6-IFG"/>
                                                     <outlet property="titleLabel" destination="Btb-fa-lXQ" id="uXh-0l-hRf"/>
                                                     <outlet property="updatedAtLabel" destination="IAO-EA-ell" id="3Ti-Q5-Z2P"/>

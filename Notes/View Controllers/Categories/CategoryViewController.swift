@@ -40,7 +40,7 @@ class CategoryViewController: UIViewController {
     }
     
     private func updateColorView() {
-        
+        colorView.backgroundColor = category?.color
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,6 +54,7 @@ class CategoryViewController: UIViewController {
             
             // Configure Destination
             destination.delegate = self
+            destination.color = category?.color ?? .white
         default:
             break
         }
@@ -63,6 +64,7 @@ class CategoryViewController: UIViewController {
 extension CategoryViewController: ColorViewControllerDelegate {
     
     func controller(_ controller: ColorViewController, didPick color: UIColor) {
+        category?.color = color
         // Update View
         updateColorView()
     }
