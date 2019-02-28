@@ -5,7 +5,7 @@
 //  Created by Woon on 27/02/2019.
 //  Copyright © 2019 Woon. All rights reserved.
 //
-
+import UIKit
 import CoreData
 
 final class CoreDataManager {
@@ -64,5 +64,32 @@ final class CoreDataManager {
     
     init(modelName: String) {
         self.modelName = modelName
+        setupNotificationHandling()
+    }
+    
+    private func setupNotificationHandling() {
+        let center = NotificationCenter.default
+        center.addObserver(self,
+                           selector: #selector(saveChanges(_:)),
+                           name: UIApplication.willTerminateNotification,
+                           object: nil)
+        center.addObserver(self,
+                           selector: #selector(saveChanges(_:)),
+                           name: UIApplication.didEnterBackgroundNotification,
+                           object: nil)
+    }
+    
+    @objc func saveChanges(_ notification: Notification) {
+        saveChanges()
+    }
+    
+    private func saveChanges() {
+        guard managedObjectContext.hasChanges else { return }
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print("Unable to Save Managed Object Context")
+            print("\(error), \(error.localizedDescription)")
+        }
     }
 }
