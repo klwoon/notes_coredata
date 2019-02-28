@@ -11,7 +11,12 @@ import UIKit
 class CategoryViewController: UIViewController {
     
     @IBOutlet var nameTextField: UITextField!
+    @IBOutlet weak var colorView: UIView!
     var category: Category?
+    
+    private enum Segue {
+        static let color = "color"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,4 +33,38 @@ class CategoryViewController: UIViewController {
     private func setupView() {
         nameTextField.text = category?.name
     }
+    
+    private func setupColorView() {
+        colorView.layer.cornerRadius = CGFloat(colorView.frame.width / 2.0)
+        updateColorView()
+    }
+    
+    private func updateColorView() {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+        case Segue.color:
+            guard let destination = segue.destination as? ColorViewController else {
+                return
+            }
+            
+            // Configure Destination
+            destination.delegate = self
+        default:
+            break
+        }
+    }
+}
+
+extension CategoryViewController: ColorViewControllerDelegate {
+    
+    func controller(_ controller: ColorViewController, didPick color: UIColor) {
+        // Update View
+        updateColorView()
+    }
+    
 }

@@ -25,6 +25,7 @@
 		695A60FD2227CE9600BB9D0C /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695A60FC2227CE9600BB9D0C /* Categories.storyboard */; };
 		695A60FF2227CF6100BB9D0C /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A60FE2227CF6100BB9D0C /* CategoryTableViewCell.swift */; };
 		697ECD7C22281E0700B9EB64 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697ECD7B22281E0700B9EB64 /* UIColor.swift */; };
+		697ECD7E22282FA400B9EB64 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697ECD7D22282FA400B9EB64 /* ColorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		695A60FC2227CE9600BB9D0C /* Categories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
 		695A60FE2227CF6100BB9D0C /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		697ECD7B22281E0700B9EB64 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		697ECD7D22282FA400B9EB64 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				695A60FE2227CF6100BB9D0C /* CategoryTableViewCell.swift */,
 				695A60F82227CE4600BB9D0C /* AddCategoryViewController.swift */,
 				695A60FA2227CE6900BB9D0C /* CategoryViewController.swift */,
+				697ECD7D22282FA400B9EB64 /* ColorViewController.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				695A60EF2227945100BB9D0C /* NoteTableViewCell.swift in Sources */,
 				695A60E72226DE6200BB9D0C /* Notes.xcdatamodeld in Sources */,
 				695A60FF2227CF6100BB9D0C /* CategoryTableViewCell.swift in Sources */,
+				697ECD7E22282FA400B9EB64 /* ColorViewController.swift in Sources */,
 				695A60F92227CE4600BB9D0C /* AddCategoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
