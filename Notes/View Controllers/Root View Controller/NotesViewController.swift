@@ -28,6 +28,7 @@ class NotesViewController: UIViewController {
         guard let notes = notes else { return false }
         return notes.count > 0
     }
+    var notesDidChange = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +36,52 @@ class NotesViewController: UIViewController {
         title = "Notes"
         setupView()
         fetchNotes()
+        setupNotificationHandling()
        
     }
 
+    private func setupNotificationHandling() {
+        let center = NotificationCenter.default
+        center.addObserver(self,
+                           selector: #selector(managedObjectContextDidChange(_:)),
+                           name: Notification.Name.NSManagedObjectContextObjectsDidChange,
+                           object: coreDataManager.managedObjectContext)
+    }
+    
+    @objc private func managedObjectContextDidChange(_ notification: Notification) {
+        guard let userInfo = notification.userInfo else { return }
+        if let inserts = userInfo[NSInsertedObjectsKey] as? Set<NSManagedObject> {
+            for insert in inserts {
+                if let note = insert as? Note {
+                    notes?.append(note)
+                    notesDidChange = true
+                }
+            }
+        }
+        if let updates = userInfo[NSUpdatedObjectsKey] as? Set<NSManagedObject> {
+            for update in updates {
+                if let _ = update as? Note {
+                    notesDidChange = true
+                }
+            }
+        }
+        if let deletes = userInfo[NSDeletedObjectsKey] as? Set<NSManagedObject> {
+            for delete in deletes {
+                if let note = delete as? Note {
+                    if let index = notes?.index(of: note) {
+                        notes?.remove(at: index)
+                        notesDidChange = true
+                    }
+                }
+            }
+        }
+        
+        if notesDidChange {
+            notes?.sort(by: { $0.updatedAtAsDate > $1.updatedAtAsDate })
+            tableView.reloadData()
+            updateView()
+        }
+    }
     private func fetchNotes() {
         // create fetch request
         let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
@@ -69,6 +113,11 @@ class NotesViewController: UIViewController {
             
             // configure destination
             destination.managedObjectContext = coreDataManager.managedObjectContext
+            
+        case Segue.Note:
+            guard let destination = segue.destination as? NoteViewController else { return }
+            guard let indexPath = tableView.indexPathForSelectedRow, let note = notes?[indexPath.row] else { return }
+            destination.note = note
         default:
             break
             
@@ -144,5 +193,6 @@ extension NotesViewController: UITableViewDataSource {
 private enum Segue {
     
     static let AddNote = "AddNote"
+    static let Note = "Note"
     
 }

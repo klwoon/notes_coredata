@@ -18,6 +18,7 @@
 		695A60EC2227025200BB9D0C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A60EB2227025200BB9D0C /* UIViewController.swift */; };
 		695A60EF2227945100BB9D0C /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A60EE2227945100BB9D0C /* NoteTableViewCell.swift */; };
 		695A60F22227B2CA00BB9D0C /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A60F12227B2CA00BB9D0C /* Note.swift */; };
+		695A60F42227B65D00BB9D0C /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A60F32227B65D00BB9D0C /* NoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		695A60EB2227025200BB9D0C /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		695A60EE2227945100BB9D0C /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		695A60F12227B2CA00BB9D0C /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		695A60F32227B65D00BB9D0C /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				695A60CA2226D4B500BB9D0C /* NotesViewController.swift */,
 				695A60ED2227942B00BB9D0C /* Table View Cells */,
 				695A60E82226F7B200BB9D0C /* AddNoteViewController.swift */,
+				695A60F32227B65D00BB9D0C /* NoteViewController.swift */,
 			);
 			path = "Root View Controller";
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				695A60CB2226D4B500BB9D0C /* NotesViewController.swift in Sources */,
 				695A60EC2227025200BB9D0C /* UIViewController.swift in Sources */,
 				695A60F22227B2CA00BB9D0C /* Note.swift in Sources */,
+				695A60F42227B65D00BB9D0C /* NoteViewController.swift in Sources */,
 				695A60C92226D4B500BB9D0C /* AppDelegate.swift in Sources */,
 				695A60E92226F7B200BB9D0C /* AddNoteViewController.swift in Sources */,
 				695A60EF2227945100BB9D0C /* NoteTableViewCell.swift in Sources */,
