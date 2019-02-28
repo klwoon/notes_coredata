@@ -24,6 +24,7 @@
 		695A60FB2227CE6900BB9D0C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A60FA2227CE6900BB9D0C /* CategoryViewController.swift */; };
 		695A60FD2227CE9600BB9D0C /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695A60FC2227CE9600BB9D0C /* Categories.storyboard */; };
 		695A60FF2227CF6100BB9D0C /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A60FE2227CF6100BB9D0C /* CategoryTableViewCell.swift */; };
+		697ECD7C22281E0700B9EB64 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697ECD7B22281E0700B9EB64 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		695A60FA2227CE6900BB9D0C /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		695A60FC2227CE9600BB9D0C /* Categories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
 		695A60FE2227CF6100BB9D0C /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		697ECD7B22281E0700B9EB64 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				695A60EB2227025200BB9D0C /* UIViewController.swift */,
+				697ECD7B22281E0700B9EB64 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				695A60E32226D5CD00BB9D0C /* CoreDataManager.swift in Sources */,
+				697ECD7C22281E0700B9EB64 /* UIColor.swift in Sources */,
 				695A60CB2226D4B500BB9D0C /* NotesViewController.swift in Sources */,
 				695A60EC2227025200BB9D0C /* UIViewController.swift in Sources */,
 				695A60F22227B2CA00BB9D0C /* Note.swift in Sources */,

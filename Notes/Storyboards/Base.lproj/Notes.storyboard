@@ -95,7 +95,7 @@
                                 <rect key="frame" x="325" y="122" width="30" height="35"/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
-                                    <segue destination="gcZ-rA-ikf" kind="show" id="zyW-A5-xyc"/>
+                                    <segue destination="gcZ-rA-ikf" kind="show" identifier="categories" id="zyW-A5-xyc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -135,7 +135,7 @@
                 <viewControllerPlaceholder storyboardName="Categories" id="gcZ-rA-ikf" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3Z-Um-7f0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2306" y="684"/>
+            <point key="canvasLocation" x="2469" y="796"/>
         </scene>
         <!--Notes View Controller-->
         <scene sceneID="tne-QT-ifu">
